@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+html,
+body {
+    background: -webkit-linear-gradient(270deg, rgba(230, 0, 233, 1) 0%, rgba(0, 118, 221, 1) 100%);
+    background: linear-gradient(270deg, rgba(230, 0, 233, 1) 0%, rgba(0, 118, 221, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#e600e9", endColorstr="#0076dd", GradientType=1);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-weight: 200;
+    max-width: 285px;
+}
+
+a {
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+.container {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content,
+.faq {
+    display: none;
+    max-width: 285px;
+}
+
+.logo {
+    width: 250px;
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+.button {
+    font-weight: 200;
+    margin-top: 10px;
+    padding: 10px;
+    display: block;
+    min-width: 285px;
+    text-align: center;
+    background: rgba(1, 1, 1, 0.5);
+    color: white;
+    text-decoration: none;
+    transition: background 0.5 linear;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: rgba(1, 1, 1, 0.6);
+    color: white;
+}
+
+@-webkit-keyframes blink {
+    0%,
+    100% {
+        border-right: 0.08em solid rgba(1, 1, 1, 0.1);
+    }
+    50% {
+        border-right: 0.08em solid rgba(1, 1, 1, 0.5);
+    }
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        border-right: 0.08em solid rgba(1, 1, 1, 0.1);
+    }
+    50% {
+        border-right: 0.08em solid rgba(1, 1, 1, 0.5);
+    }
+}
