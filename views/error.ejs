@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline?</title>
+    <link href="assets/css/base.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <noscript>bruh, who the hell disables js on webpages?!</noscript>
+    <div class="container">
+        <h1>Well, this is not good...</h1>
+        <p>
+            I really hope nobody will ever see this, but there was a problem :-/<br>More info here:<br>
+        </p>
+        <pre>
+            <code>
+                <%= error %> 
+            </code>
+        </pre>
+    </div>
+    <script src="assets/js/theme.js"></script>
+    <style>
+        .container {
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</body>
+
+</html>

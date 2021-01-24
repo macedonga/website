@@ -119,6 +119,14 @@ client.on("presenceUpdate", (oldMember, newMember) => {
         }
 });
 
+app.use(function(err, req, res, next) {
+    res.status(500).render("error", { error: err.stack });
+});
+
+app.use(function(req, res, next) {
+    res.redirect("/");
+});
+
 io.on("connection", (socket) => {
 
 });
