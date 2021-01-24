@@ -1,0 +1,25 @@
+{
+    "name": "macedonga (Marco Ceccon)",
+    "short_name": "macedonga",
+    "theme_color": "#333",
+    "background_color": "#333333",
+    "display": "minimal-ui",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [{
+        "src": "https://cdn.macedon.ga/p.n.g.r.png",
+        "type": "image/png",
+        "sizes": "460x460"
+    }],
+    "shortcuts": [{
+        "name": "Shorty - A URL shortener",
+        "short_name": "Shorty",
+        "description": "A URL shortener",
+        "url": "/shorty/",
+        "icons": [{
+            "src": "https://cdn.macedon.ga/p.n.g.r.png",
+            "type": "image/png",
+            "sizes": "460x460"
+        }]
+    }]
+}
