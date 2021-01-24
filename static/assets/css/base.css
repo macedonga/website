@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+* {
+    transition: color 0.25s linear, background-color 0.25s linear;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+head,
+body {
+    font-family: "Roboto", Verdana, "Geneva", Tahoma, sans-serif;
+    background-color: var(--background-color);
+    color: var(--color);
+    text-align: center;
+    margin: 30px;
+}
+
+a,
+a:visited {
+    color: var(--link);
+    transition: color 0.15s linear;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 3px;
+}
+
+p {
+    margin: 7px;
+}
+
+.content {
+    margin-top: 20px;
+    text-align: left;
+    margin: auto;
+    max-width: 650px;
+    margin-top: 10px;
+}
+
+.discord .avatar-container {
+    display: inline-block;
+    border-width: 2px;
+    padding: 3px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style: solid;
+}
+
+.discord .idle {
+    border-color: rgb(238, 231, 27);
+}
+
+.discord .online {
+    border-color: rgb(44, 197, 14);
+}
+
+.discord .dnd {
+    border-color: rgb(245, 37, 37);
+}
+
+.discord .offline {
+    border-color: rgb(90, 90, 90);
+}
+
+.discord .avatar-container .avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    transition: width 0.15s, height 0.15s, margin-top 0.15s;
+}
+
+.discord a {
+    border-radius: 50%;
+}
+
+.discord a:hover .avatar-container .avatar {
+    margin-top: 5px;
+    width: 90px;
+    height: 90px;
+}
+
+.socials {
+    margin-top: 10px;
+    font-size: large;
+}
+
+.socials a {
+    margin: 4px;
+}
+
+.spotify-container {
+    background-color: var(--spotify-container);
+    border-radius: 5px;
+    max-width: 650px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.spotify-container p {
+    margin: 16px;
+}
+
+.spotify {
+    display: flex;
+}
+
+.spotify .spotify-info {
+    width: calc(100% - 98px);
+    margin-left: 10px;
+    display: block;
+}
+
+.spotify .spotify-image {
+    border-radius: 5px;
+    max-width: 85px;
+}
+
+.spotify .progress {
+    width: 100%;
+    background-color: var(--spotify-progress);
+    height: 2px;
+    border-radius: 5px;
+}
+
+.spotify .bar {
+    width: 1%;
+    height: 2px;
+    background-color: var(--spotify-bar);
+    transition: width 0.25s linear;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+.project {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.projects:after {
+    content: "";
+    display: table;
+    clear: both;
+    box-sizing: border-box;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+.theme {
+    font-size: larger;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

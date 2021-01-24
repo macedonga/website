@@ -1,0 +1,25 @@
+.amoled {
+    --background-color: #111;
+    --color: #fff;
+    --link: #ddd;
+    --link-hover: #aaa;
+    --spotify-container: #333;
+    --spotify-progress: #222;
+    --spotify-bar: #444;
+    --scrollbar-track: #111;
+    --scrollbar-thumb: #222;
+    --scrollbar-thumb-hover: #333;
+}
+
+.light {
+    --background-color: #fff;
+    --color: #000;
+    --link: #444;
+    --link-hover: #777;
+    --spotify-container: #ccc;
+    --spotify-progress: #666;
+    --spotify-bar: #999;
+    --scrollbar-track: #ddd;
+    --scrollbar-thumb: #bbb;
+    --scrollbar-thumb-hover: #999;
+}
