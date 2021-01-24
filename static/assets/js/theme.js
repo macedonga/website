@@ -12,9 +12,9 @@ function toggleTheme() {
 }
 
 (function() {
-    if (localStorage.getItem('theme') === 'amoled') {
-        setTheme('amoled');
-    } else {
+    if (localStorage.getItem('theme') === 'light') {
         setTheme('light');
+    } else {
+        setTheme('amoled');
     }
 })();
