@@ -15,6 +15,12 @@ const PORT = process.env.PORT || 8080;
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
 const refresh_token = process.env.REFRESH_TOKEN;
+const pdata = {
+    "online": "online",
+    "dnd": "on do not disturb",
+    "idle": "inactive",
+    "offline": "offline"
+}
 
 app.set("view engine", "ejs");
 app.use(express.static("static"));
@@ -57,7 +63,7 @@ client.on('ready', async() => {
 
 app.get("/", async(req, res) => {
     getSpotify().then((spotify) => {
-        res.render("index", { spotify: spotify, discord: discordData, joke: jokes[Math.floor(Math.random() * jokes.length)] });
+        res.render("index", { spotify: spotify, discord: discordData, joke: jokes[Math.floor(Math.random() * jokes.length)], status: pdata[discordData.status] });
     });
 });
 

@@ -34,25 +34,41 @@
 
 <body>
     <noscript>bruh, who the hell disables js on webpages?!</noscript>
-    <button onclick="toggleTheme() " class="theme "><i class="fas fa-sun "></i></button>
-    <div class="discord ">
-        <a href="https://discord.com/users/705080774113886238 ">
-            <div class="avatar-container <%=discord.status%>">
-    <img class="avatar" alt="PFP" src="<%=discord.avatar %>">
-    </div>
-    </a>
+    <button onclick="toggleTheme()" class="theme" aria-label="Theme changer"><i class="fas fa-sun "></i></button>
+    <div class="discord">
+        <div class="avatar-container <%=discord.status%>">
+            <a href="https://discord.com/users/705080774113886238 ">
+                <img class="avatar" alt="PFP" src="<%=discord.avatar %>">
+        </a>
+            <% if(discord.name) { %>
+                <div class="status-container">
+                    <img src="<%=discord.e_url %>">
+                    <div class="text">
+                        <p>
+                            <%=discord.name %>
+
+                        </p>
+                    </div>
+                </div>
+                <% } %>
+        </div>
     </div>
     <h1>Marco Ceccon</h1>
     <h2>@macedonga</h2>
     <div class="socials">
-        <a href="https://github.com/macedonga"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/_macedonga_"><i class="fab fa-twitter"></i></a>
-        <a href="https://discord.com/users/705080774113886238"><i class="fab fa-discord"></i></a>
-        <a href="mailto:me@macedon.ga"><i class="fas fa-envelope-open"></i></a>
+        <a href="https://github.com/macedonga">
+            <p style="display:none">GitHub</p><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/_macedonga_">
+            <p style="display:none">Twitter</p><i class="fab fa-twitter"></i></a>
+        <a href="https://discord.com/users/705080774113886238">
+            <p style="display:none">Discord</p><i class="fab fa-discord"></i></a>
+        <a href="mailto:me@macedon.ga">
+            <p style="display:none">E-mail</p><i class="fas fa-envelope-open"></i></a>
     </div>
     <div class="content">
         <h2>👋 Hi, I'm Marco.</h2>
-        <p>Not a full-stack developer</p>
+        <p>Not a full-stack developer<br>I'm currently
+            <%= status %> on Discord.</p>
         <h2>🔧 My skills</h2>
         <p>I can code in C#, Python (eww), Node.JS, PHP and I can make simple website like this one.<br>I have experience with MongoDB, MySQL, Express, EJS, Discord.JS, SolidWorks and KeyShot.</p>
         <h2>⚙️ Recent projects:</h2>
@@ -124,12 +140,12 @@
     <script src="assets/js/spotify.js"></script>
     <script>
         /* ("serviceWorker" in navigator) {
-                                                                                                                                                                                                                                                                            navigator.serviceWorker.register('worker.js').then(function(registration) {
-                                                                                                                                                                                                                                                                                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                                                                                                                                                                                                                                                                            }).catch(function(err) {
-                                                                                                                                                                                                                                                                                console.log('ServiceWorker registration failed: ', err);
-                                                                                                                                                                                                                                                                            });
-                                                                                                                                                                                                                                                                        }*/
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    navigator.serviceWorker.register('worker.js').then(function(registration) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }).catch(function(err) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        console.log('ServiceWorker registration failed: ', err);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }*/
     </script>
     <script>
         spotify("<%=spotify.duration_ms||1 %>", "<%=spotify.progress_ms||1 %>")

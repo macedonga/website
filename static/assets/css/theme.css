@@ -9,6 +9,7 @@
     --scrollbar-track: #111;
     --scrollbar-thumb: #222;
     --scrollbar-thumb-hover: #333;
+    --status-container: #555;
 }
 
 .light {
