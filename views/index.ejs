@@ -139,13 +139,13 @@
     <script src=" assets/js/theme.js "></script>
     <script src="assets/js/spotify.js"></script>
     <script>
-        /* ("serviceWorker" in navigator) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    navigator.serviceWorker.register('worker.js').then(function(registration) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }).catch(function(err) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        console.log('ServiceWorker registration failed: ', err);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    });
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }*/
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register('worker.js').then(function(registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function(err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
     </script>
     <script>
         spotify("<%=spotify.duration_ms||1 %>", "<%=spotify.progress_ms||1 %>")
