@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="amoled">
 
 <head>
     <meta charset="UTF-8">
@@ -34,13 +34,13 @@
 
 <body>
     <noscript>bruh, who the hell disables js on webpages?!</noscript>
-    <button onclick="toggleTheme()" class="theme"><i class="fas fa-sun"></i></button>
-    <div class="discord">
-        <a href="https://discord.com/users/705080774113886238">
+    <button onclick="toggleTheme() " class="theme "><i class="fas fa-sun "></i></button>
+    <div class="discord ">
+        <a href="https://discord.com/users/705080774113886238 ">
             <div class="avatar-container <%=discord.status%>">
-                <img class="avatar" alt="PFP" src="<%=discord.avatar %>">
-            </div>
-        </a>
+    <img class="avatar" alt="PFP" src="<%=discord.avatar %>">
+    </div>
+    </a>
     </div>
     <h1>Marco Ceccon</h1>
     <h2>@macedonga</h2>
@@ -72,18 +72,17 @@
                     <a href="https://covogo.thisisascam.xyz">Website</a></p>
             </div>
             <div class="project">
-                <p>????<br>????????????????????<br>
-                    <a href="https://s.mcdn.ga/who-knows">????????</a></p>
+                <p>A bot list<br>Just another bot list<br>
+                    <a href="#">Not yet public</a></p>
             </div>
         </div>
         <h2>🎙️ A geek joke for you:</h2>
         <p>
             <%=joke.setup%><br><i><%=joke.punchline%></i></p>
         <h2>🎵 I'm currently listening to:</h2>
-        <h2></h2>
         <div class="spotify-container">
             <div class="spotify">
-                <img class="spotify-image" alt="Album cover" src="<%=spotify.image || " assets/images/placeholder.png "%>">
+                <img class="spotify-image" alt="Album cover" src="<%=spotify.image || " assets/images/placeholdermusic.png "%>">
                 <div class="spotify-info">
                     <a href="<%=spotify.song_url || " # "%>">
                         <p class="spotify-name">
@@ -100,22 +99,37 @@
                 </div>
             </div>
         </div>
+        <h2>🎮 I'm currently using:</h2>
+        <h2></h2>
+        <div class="spotify-container">
+            <div class="game">
+                <img class="game-image" alt="Album cover" src="<%=discord.game.imageLink || " assets/images/placeholdergame.png "%>">
+                <div class="game-info">
+                    <p class="game-name">
+                        <%=discord.game.name || "Nothing"%>
+                    </p>
+                    <p class="game-artist">
+                        <%=discord.game.desc || ""%>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <hr>
         <p>Website made by <a href="https://github.com/macedonga">macedonga</a> not with ❤️, but with a 💻</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src=" assets/js/theme.js "></script>
     <script src="assets/js/spotify.js"></script>
-    <script src="assets/js/theme.js"></script>
     <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register('worker.js').then(function(registration) {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }).catch(function(err) {
-                console.log('ServiceWorker registration failed: ', err);
-            });
-        }
+        /* ("serviceWorker" in navigator) {
+                                                                                                                                                                                                                                                                            navigator.serviceWorker.register('worker.js').then(function(registration) {
+                                                                                                                                                                                                                                                                                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                                                                                                                                                                                                                                                                            }).catch(function(err) {
+                                                                                                                                                                                                                                                                                console.log('ServiceWorker registration failed: ', err);
+                                                                                                                                                                                                                                                                            });
+                                                                                                                                                                                                                                                                        }*/
     </script>
     <script>
         spotify("<%=spotify.duration_ms||1 %>", "<%=spotify.progress_ms||1 %>")

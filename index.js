@@ -26,12 +26,28 @@ client.on('ready', async() => {
     let user = await guild.members.fetch("705080774113886238");
 
     let activity = user.user.presence.activities.filter((status) => { return status.type === "CUSTOM_STATUS" })[0];
+    let game = user.user.presence.activities.filter((status) => { return status.type === "PLAYING" })[0];
 
     discordData.status = user.user.presence.status;
     if (discordData.status != "offline") {
         discordData.e_url = `https://cdn.discordapp.com/emojis/${activity.emoji.id}`;
         discordData.name = activity.state;
-    }
+        if (game)
+            discordData.game = {
+                name: game.name,
+                desc: game.details,
+                details: game.largeText,
+                imageLink: `https://cdn.discordapp.com/app-assets/${game.applicationID}/${game.assets.largeImage}.png`,
+                from: game.createdTimestamp
+            }
+    } else
+        discordData.game = {
+            name: undefined,
+            desc: undefined,
+            details: undefined,
+            imageLink: undefined,
+            from: undefined
+        }
     discordData.username = user.user.username;
     discordData.tag = user.user.tag;
     discordData.avatar = user.user.displayAvatarURL({ dynamic: true });
@@ -79,19 +95,36 @@ function getSpotify() {
 client.on("presenceUpdate", (oldMember, newMember) => {
     if (newMember.user.id != "705080774113886238") return;
     let activity = newMember.user.presence.activities.filter((status) => { return status.type === "CUSTOM_STATUS" })[0];
+    let game = newMember.user.presence.activities.filter((status) => { return status.type === "PLAYING" })[0];
 
     discordData.status = newMember.user.presence.status;
     if (discordData.status != "offline") {
         discordData.e_url = `https://cdn.discordapp.com/emojis/${activity.emoji.id}`;
         discordData.name = activity.state;
-    }
+        if (game)
+            discordData.game = {
+                name: game.name,
+                desc: game.details,
+                details: game.largeText,
+                imageLink: `https://cdn.discordapp.com/app-assets/${game.applicationID}/${game.assets.largeImage}.png`,
+                from: game.createdTimestamp
+            }
+    } else
+        discordData.game = {
+            name: undefined,
+            desc: undefined,
+            details: undefined,
+            imageLink: undefined,
+            from: undefined
+        }
 });
 
 io.on("connection", (socket) => {
 
 });
 
-http.listen(PORT, () => {
-    client.login(process.env.TOKEN);
-    console.log("Listening at http://localhost:" + PORT);
+client.login(process.env.TOKEN).then(() => {
+    http.listen(PORT, () => {
+        console.log("Listening at http://localhost:" + PORT);
+    });
 });

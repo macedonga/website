@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 * {
-    transition: color 0.25s linear, background-color 0.25s linear;
+    transition: color 0.25s linear;
 }
 
 input:focus,
@@ -100,6 +100,7 @@ p {
     margin: 4px;
 }
 
+.game-container,
 .spotify-container {
     background-color: var(--spotify-container);
     border-radius: 5px;
@@ -108,20 +109,24 @@ p {
     margin-top: 10px;
 }
 
+.game-container,
 .spotify-container p {
     margin: 16px;
 }
 
+.game,
 .spotify {
     display: flex;
 }
 
+.game .game-info,
 .spotify .spotify-info {
     width: calc(100% - 98px);
     margin-left: 10px;
     display: block;
 }
 
+.game .game-image,
 .spotify .spotify-image {
     border-radius: 5px;
     max-width: 85px;
