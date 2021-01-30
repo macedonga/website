@@ -48,11 +48,11 @@ client.on('ready', async() => {
             }
     } else
         discordData.game = {
-            name: undefined,
-            desc: undefined,
-            details: undefined,
-            imageLink: undefined,
-            from: undefined
+            name: "Nothing",
+            desc: "Nothing",
+            details: "Nothing",
+            imageLink: "https://cdn.macedon.ga/p.n.g.r.png",
+            from: "Nothing"
         }
     discordData.username = user.user.username;
     discordData.tag = user.user.tag;
@@ -117,11 +117,11 @@ client.on("presenceUpdate", (oldMember, newMember) => {
             }
     } else
         discordData.game = {
-            name: undefined,
-            desc: undefined,
-            details: undefined,
-            imageLink: undefined,
-            from: undefined
+            name: "Nothing",
+            desc: "Nothing",
+            details: "Nothing",
+            imageLink: "https://cdn.macedon.ga/p.n.g.r.png",
+            from: "Nothing"
         }
 });
 
