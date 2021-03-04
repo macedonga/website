@@ -67,11 +67,11 @@
             <p style="display:none">E-mail</p><i class="fas fa-envelope-open"></i></a>
     </div>
     <div class="content">
-        <h2>👋 Hi, I'm Marco.</h2>
+        <h2 id="whoami">👋 Hi, I'm Marco.</h2>
         <p>Not a full-stack developer.</p>
-        <h2>🔧 My skills</h2>
+        <h2 id="skills">🔧 My skills</h2>
         <p>I can code in C#, Python (eww), Node.JS, PHP and I can make simple website like this one.<br>I have experience with MongoDB, MySQL, Express, EJS, Discord.JS, Brain.JS, SolidWorks and KeyShot.</p>
-        <h2>⚙️ Recent projects:</h2>
+        <h2 id="projects">⚙️ Recent projects:</h2>
         <div class="projects">
             <div class="project">
                 <p>USERD<br> Bots on Discord, Telegram and Reddit.<br>
@@ -92,10 +92,10 @@
                     <a href="https://reddit.userd.xyz">Website</a></p>
             </div>
         </div>
-        <h2>🎙️ A geek joke for you:</h2>
+        <h2 id="geek-joke">🎙️ A geek joke for you:</h2>
         <p>
             <%=joke.setup%><br><i><%=joke.punchline%></i></p>
-        <h2>🎵 I'm currently listening to:</h2>
+        <h2 id="music">🎵 I'm currently listening to:</h2>
         <div class="spotify-container">
             <div class="spotify">
                 <img class="spotify-image" alt="Album cover" src="<%=spotify.image || " assets/images/placeholdermusic.png "%>">
@@ -114,7 +114,7 @@
             </div>
         </div>
         <% if(discord.game) { %>
-        <h2>🎮 I'm currently using:</h2>
+        <h2 id="game">🎮 I'm currently using:</h2>
         <div class="spotify-container">
             <div class="game">
                 <img class="game-image" alt="Album cover" src="<%=discord.game.imageLink%>">
@@ -139,7 +139,6 @@
     <script src=" assets/js/main.js "></script>
     <script src=" assets/js/theme.js "></script>
     <script src="assets/js/spotify.js"></script>
-    <!--
     <script>
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register('worker.js').then(function(registration) {
@@ -149,7 +148,6 @@
             });
         }
     </script>
-    -->
     <script>
         spotify("<%=spotify.duration_ms||1 %>", "<%=spotify.progress_ms||1 %>");
     </script>

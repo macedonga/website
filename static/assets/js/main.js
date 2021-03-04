@@ -1,11 +1,11 @@
 const socket = io();
 
 $('h2').each(function () {
-    $(this).prepend(`<button id=\"\" onclick=\"'location.href="#${$(this).attr('id')}"'\" class=\"fas fa-link\"></button>`);
+    $(this).prepend(`<button id=\"\" onclick=\"location.href='\\#${$(this).attr('id')}'\" class=\"fas fa-link\"></button>`);
 });
 
 $('h3').each(function () {
-    $(this).prepend(`<button id=\"\" onclick=\"'location.href="#${$(this).attr('id')}"'\" class=\"fas fa-link\"></button>`);
+    $(this).prepend(`<button id=\"\" onclick='location.href=\"\\#${$(this).attr('id')}'\" class=\"fas fa-link\"></button>`);
 });
 
 socket.on("music", data => {

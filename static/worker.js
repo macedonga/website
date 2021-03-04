@@ -7,7 +7,7 @@ var currentCache = {
 
 this.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(currentCache.offline).then(function(cache) {
+        caches.open(currentCache.offline).then(function (cache) {
             return cache.addAll([
                 "offline.html",
                 "assets/css/base.css",
@@ -27,7 +27,7 @@ this.addEventListener('fetch', event => {
         );
     } else {
         event.respondWith(caches.match(event.request)
-            .then(function(response) {
+            .then(function (response) {
                 return response || fetch(event.request);
             })
         );
