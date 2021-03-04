@@ -21,13 +21,15 @@ const pdata = {
     "idle": "inactive",
     "offline": "offline"
 }
+var spotify = {};
+var sockets = [];
 
 app.set("view engine", "ejs");
 app.use(express.static("static"));
 
 let discordData = {};
 
-client.on('ready', async() => {
+client.on('ready', async () => {
     let guild = await client.guilds.fetch("771625972792557588")
     let user = await guild.members.fetch("705080774113886238");
 
@@ -61,13 +63,7 @@ client.on('ready', async() => {
     console.log('Connected!');
 });
 
-app.get("/", async(req, res) => {
-    getSpotify().then((spotify) => {
-        res.render("index", { spotify: spotify, discord: discordData, joke: jokes[Math.floor(Math.random() * jokes.length)], status: pdata[discordData.status] });
-    });
-});
-
-function getSpotify() {
+const getSpotify = async () => {
     return new Promise((resolve) => {
         var authOptions = {
             url: "https://accounts.spotify.com/api/token",
@@ -120,24 +116,46 @@ client.on("presenceUpdate", (oldMember, newMember) => {
             name: "Nothing",
             desc: "Nothing",
             details: "Nothing",
-            imageLink: "https://cdn.macedon.ga/p.n.g.r.png",
+            imageLink: "assets/images/placeholdergame.png",
             from: "Nothing"
         }
+    sockets.forEach((sockets) => {
+        sockets.emit("game", discordData);
+    });
 });
 
-app.use(function(err, req, res, next) {
+app.get("/", async (req, res) => {
+    await HandleSpotify();
+    var data = await getSpotify();
+    res.render("index", { spotify: data, discord: discordData, joke: jokes[Math.floor(Math.random() * jokes.length)], status: pdata[discordData.status] });
+});
+
+app.use((err, req, res, next) => {
     res.status(500).render("error", { error: err.stack });
 });
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
     res.redirect("/");
 });
 
 io.on("connection", (socket) => {
-
+    sockets.push(socket);
 });
 
-client.login(process.env.TOKEN).then(() => {
+const HandleSpotify = async (timeout) => {
+    if (spotify.success && !timeout) return;
+    spotify = await getSpotify();
+    if (!spotify.success) return;
+    if (timeout) sockets.forEach((sockets) => {
+        sockets.emit("music", spotify);
+    });
+    return setTimeout(() => {
+        HandleSpotify(true);
+    }, spotify.duration_ms - spotify.progress_ms);
+}
+
+client.login(process.env.TOKEN).then(async () => {
+    HandleSpotify();
     http.listen(PORT, () => {
         console.log("Listening at http://localhost:" + PORT);
     });

@@ -9,7 +9,7 @@
     "icons": [{
         "src": "https://cdn.macedon.ga/p.n.g.r.png",
         "type": "image/png",
-        "sizes": "460x460"
+        "sizes": "1024x1024"
     }],
     "shortcuts": [{
         "name": "Shorty - A URL shortener",
@@ -19,7 +19,7 @@
         "icons": [{
             "src": "https://cdn.macedon.ga/p.n.g.r.png",
             "type": "image/png",
-            "sizes": "460x460"
+            "sizes": "1024x1024"
         }]
     }]
 }

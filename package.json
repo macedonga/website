@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node .",
-        "debug": "nodemon ."
+        "debug": "nodemon . --ignore './static'"
     },
     "keywords": [],
     "author": "Marco <me@macedon.ga>",

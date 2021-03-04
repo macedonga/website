@@ -1,26 +1,26 @@
 .amoled {
-    --background-color: #111;
-    --color: #fff;
-    --link: #ddd;
-    --link-hover: #aaa;
-    --spotify-container: #333;
-    --spotify-progress: #222;
-    --spotify-bar: #444;
-    --scrollbar-track: #111;
-    --scrollbar-thumb: #222;
-    --scrollbar-thumb-hover: #333;
-    --status-container: #555;
+  --background-color: #2c2f33;
+  --color: #99aab5;
+  --header-color: #fff;
+  --link: #7289da;
+  --link-hover: #5c6fb1;
+  --spotify-container: #23272a;
+  --spotify-progress: #363d46;
+  --spotify-bar: #43484e;
+  --scrollbar-track: #23272a;
+  --scrollbar-thumb: #43484e;
+  --scrollbar-thumb-hover: #363d46;
 }
 
 .light {
-    --background-color: #fff;
-    --color: #000;
-    --link: #444;
-    --link-hover: #777;
-    --spotify-container: #ccc;
-    --spotify-progress: #666;
-    --spotify-bar: #999;
-    --scrollbar-track: #ddd;
-    --scrollbar-thumb: #bbb;
-    --scrollbar-thumb-hover: #999;
+  --background-color: #fff;
+  --color: #74818a;
+  --link: #7289da;
+  --link-hover: #5c6fb1;
+  --spotify-container: #ccc;
+  --spotify-progress: #666;
+  --spotify-bar: #999;
+  --scrollbar-track: #ddd;
+  --scrollbar-thumb: #bbb;
+  --scrollbar-thumb-hover: #999;
 }
