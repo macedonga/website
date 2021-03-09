@@ -160,3 +160,11 @@ client.login(process.env.TOKEN).then(async () => {
         console.log("Listening at http://localhost:" + PORT);
     });
 });
+
+process.on('uncaughtException', function (error) {
+    console.log(error.stack);
+});
+
+process.on('unhandledRejection', function (reason, p) {
+    console.log(reason);
+});
