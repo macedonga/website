@@ -38,8 +38,6 @@ client.on('ready', async () => {
 
     discordData.status = user.user.presence.status;
     if (discordData.status != "offline") {
-        discordData.e_url = `https://cdn.discordapp.com/emojis/${activity.emoji.id}`;
-        discordData.name = activity.state;
         if (game)
             discordData.game = {
                 name: game.name,
@@ -101,8 +99,6 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
     discordData.status = newMember.user.presence.status;
     if (discordData.status != "offline") {
-        discordData.e_url = `https://cdn.discordapp.com/emojis/${activity.emoji.id}`;
-        discordData.name = activity.state;
         if (game)
             discordData.game = {
                 name: game.name,
